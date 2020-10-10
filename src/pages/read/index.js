@@ -1,9 +1,10 @@
 import React from 'react';
+import ReadComponent from '../../components/Read';
 
 const Read = () => {
   return (
     <div>
-      <h1>read</h1>
+      <ReadComponent />
     </div>
   );
 };

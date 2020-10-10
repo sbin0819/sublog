@@ -26,17 +26,17 @@ const Footer = () => {
   return (
     <Container>
       <StyledMenu>
-        <Menu.Item key='read'>
-          <Link to='/read'>Home</Link>
+        <Menu.Item>
+          <Link to='/'>Home</Link>
         </Menu.Item>
-        <Menu.Item key='watch'>
-          <Link to='/watch'>For you</Link>
+        <Menu.Item>
+          <Link to='/recommend'>For you</Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link to='/topics'>Topics</Link>
         </Menu.Item>
         <Menu.Item key='listen'>
-          <Link to='/listen'>Topics</Link>
-        </Menu.Item>
-        <Menu.Item key='listen'>
-          <Link to='/listen'>Saved</Link>
+          <Link to='/saved'>Saved</Link>
         </Menu.Item>
       </StyledMenu>
     </Container>
