@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Card } from 'antd';
+import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { generateDummyRead } from './dummy';
 
 // antd card
 
 const Container = styled.div`
-  background: lightpink;
   height: calc(100vh - 175px);
   display: flex;
   overflow-x: scroll;
@@ -30,7 +29,7 @@ const ContentContainer = styled.div`
   }
 `;
 
-const ReadComponent = () => {
+const ReadComponent = ({ history, match }) => {
   const [readList, setReadList] = useState(null);
 
   useEffect(() => {
@@ -41,12 +40,19 @@ const ReadComponent = () => {
   }, [readList]);
 
   if (!readList) return <h1>로딩 중...</h1>;
-  console.log(readList);
+
+  const onClick = (id, data) => {
+    history.push({
+      pathname: `/read/${id}`,
+      state: { article: data },
+    });
+  };
+
   return (
     <Container>
       {readList.map((data) => (
-        <ContentContainer key={data.id}>
-          <img src={data.Images[0].src} />
+        <ContentContainer key={data.id} onClick={() => onClick(data.id, data)}>
+          {/* <img src={data.Images[0].src} /> */}
           <div className='title'>{data.title}</div>
         </ContentContainer>
       ))}
@@ -54,4 +60,4 @@ const ReadComponent = () => {
   );
 };
 
-export default ReadComponent;
+export default withRouter(ReadComponent);

@@ -1,8 +1,6 @@
 import React from 'react';
 
-import ReadComponent from '../../components/Read';
-
-// import HomeMenu from '../../templates/HomeMenu';
+import ReadComponent from '../../components/randing/Read';
 
 const Home = () => {
   return (

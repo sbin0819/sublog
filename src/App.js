@@ -5,6 +5,7 @@ import Home from './pages/home';
 import Read from './pages/read';
 import Watch from './pages/watch';
 import Listen from './pages/listen';
+import News from './pages/news';
 import Recommend from './pages/recommend';
 import Topics from './pages/topics';
 import Saved from './pages/saved';
@@ -15,7 +16,7 @@ function App() {
       <Switch>
         <BasicTemplate>
           <Route exact path='/' component={Home} />
-          <Route exact path='/read' component={Read} />
+          <Route path='/read' component={Read} />
           <Route exact path='/watch' component={Watch} />
           <Route exact path='/listen' component={Listen} />
           <Route exact path='/recommend' component={Recommend} />

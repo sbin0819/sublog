@@ -27,7 +27,7 @@ const Footer = () => {
     <Container>
       <StyledMenu>
         <Menu.Item>
-          <Link to='/'>Home</Link>
+          <Link to='/news'>News</Link>
         </Menu.Item>
         <Menu.Item>
           <Link to='/recommend'>For you</Link>

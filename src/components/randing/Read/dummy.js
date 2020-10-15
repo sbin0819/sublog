@@ -9,6 +9,6 @@ export const generateDummyRead = (number) =>
       type: 'read',
       User: { id: shortId.generate(), nickname: faker.name.findName() },
       title: faker.lorem.sentence(),
-      content: faker.lorem.paragraph(),
+      content: faker.lorem.paragraphs().repeat(5),
       Images: [{ src: faker.image.image() }],
     }));
