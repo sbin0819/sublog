@@ -5,7 +5,6 @@ import { categories } from './dummy';
 
 const Container = styled.div`
   flex: flex;
-  margin: 20px 15px;
 `;
 
 function Header() {
