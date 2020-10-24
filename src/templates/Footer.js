@@ -13,12 +13,12 @@ const StyledMenu = styled(Menu)`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 20px;
+  padding: 10px 5px;
   background: black;
   a {
     text-decoration: none;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
   }
 `;
 

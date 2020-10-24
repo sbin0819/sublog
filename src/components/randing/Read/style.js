@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ContentContainer = styled.div`
   position: relative;
-  flex: 0 0 auto;
+  flex: 0 0;
   width: 100vw;
   .title {
     position: absolute;

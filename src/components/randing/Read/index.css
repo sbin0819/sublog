@@ -1,4 +1,7 @@
   /* Custom Coloring */
+  .ant-carousel .slick-dots-top {
+    height: 15px;
+  }
   .ant-carousel .slick-dots li {
     width: 100px;
     margin: 1px;

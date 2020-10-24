@@ -10,7 +10,6 @@ const StyledMenu = styled(Menu)`
   display: flex;
   justify-content: space-around;
   padding: 20px 15px 10px 15px;
-
   a {
     text-decoration: none;
     color: black;
@@ -20,7 +19,7 @@ const StyledMenu = styled(Menu)`
 
 const Container = styled.div`
   background: #f6f5f6;
-  min-height: calc(100vh - 125px);
+  min-height: calc(100vh);
   /* margin-bottom: 125px; */
   overflow: scroll;
 `;
