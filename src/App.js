@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import BasicTemplate from './templates/BasicTemplate';
 import Home from './pages/home';
+import About from './pages/about';
 import Account from './pages/account';
 import Read from './pages/read';
 import Watch from './pages/watch';
@@ -17,6 +18,7 @@ function App() {
       <Switch>
         <BasicTemplate>
           <Route exact path='/' component={Home} />
+          <Route exact path='/about' component={About} />
           <Route exact path='/account' component={Account} />
           <Route path='/read' component={Read} />
           <Route exact path='/watch' component={Watch} />

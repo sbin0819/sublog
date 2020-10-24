@@ -49,7 +49,7 @@ const BasicTemplate = ({ children, location }) => {
           </Menu.Item>
         </StyledMenu>
       )}
-      <Col xs={24} md={6}>
+      <Col>
         <Container>{children}</Container>
       </Col>
       <Footer />
