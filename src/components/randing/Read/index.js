@@ -4,39 +4,19 @@ import styled from 'styled-components';
 import { generateDummyRead } from './dummy';
 import { Carousel } from 'antd';
 
-// const Container = styled.div`
-//   height: calc(100vh - 175px);
-//   display: flex;
-//   overflow-x: scroll;
-//   ::-webkit-scrollbar {
-//     display: none;
-//   }
-// `;
+import './index.css';
 
-const ContentContainer = styled.div`
-  position: relative;
-  flex: 0 0 auto;
-  width: 100vw;
-  .title {
-    position: absolute;
-    top: 100px;
-    left: 20px;
-    width: 220px;
-    background-color: black;
-    color: white;
-    font-size: 25px;
-  }
-`;
+import { ContentContainer } from './style';
+
+const StyledCarousel = styled(Carousel)``;
 
 const ReadComponent = ({ history }) => {
   const [readList, setReadList] = useState(null);
 
   useEffect(() => {
-    if (!readList) {
-      const response = generateDummyRead(5);
-      setReadList(response);
-    }
-  }, [readList]);
+    const response = generateDummyRead(4);
+    setReadList(response);
+  }, []);
 
   if (!readList) return <h1>로딩 중...</h1>;
 
@@ -59,13 +39,12 @@ const ReadComponent = ({ history }) => {
   };
 
   return (
-    <Carousel autoplay dotPosition={'top'}>
+    <StyledCarousel autoplay dotPosition={'top'}>
       <div>{sliderItems(readList[0])}</div>
       <div>{sliderItems(readList[1])}</div>
       <div>{sliderItems(readList[2])}</div>
       <div>{sliderItems(readList[3])}</div>
-      <div>{sliderItems(readList[4])}</div>
-    </Carousel>
+    </StyledCarousel>
   );
 };
 
