@@ -1,0 +1,19 @@
+  /* Custom Coloring */
+  .ant-carousel .slick-dots li {
+    width: 100px;
+    margin: 1px;
+  }
+  .ant-carousel .slick-dots li.slick-active {
+    width: 100px;
+
+  }
+  .ant-carousel .slick-dots li button {
+    opacity: 1;
+    height: 10px;
+  }
+
+  .ant-carousel .slick-dots li.slick-active button {
+    opacity: 1;
+    background: black;
+    height: 10px;
+  }
