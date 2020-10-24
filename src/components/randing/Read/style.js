@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
+// add media query
+export const ReadItemContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 export const ContentContainer = styled.div`
   position: relative;
-  flex: 0 0;
   width: 100vw;
   .title {
     position: absolute;

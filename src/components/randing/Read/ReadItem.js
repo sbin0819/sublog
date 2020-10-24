@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { ContentContainer } from './style';
+import { ReadItemContainer, ContentContainer } from './style';
 
 const ReadItem = ({ history, read }) => {
   const onClick = (id, data) => {
@@ -10,10 +10,12 @@ const ReadItem = ({ history, read }) => {
     });
   };
   return (
-    <ContentContainer onClick={() => onClick(read.id, read)}>
-      <img src={read.Images[0].src} />
-      <div className='title'>{read.title}</div>
-    </ContentContainer>
+    <ReadItemContainer>
+      <ContentContainer onClick={() => onClick(read.id, read)}>
+        <img src={read.Images[0].src} />
+        <div className='title'>{read.title}</div>
+      </ContentContainer>
+    </ReadItemContainer>
   );
 };
 
