@@ -1,11 +1,11 @@
 import React from 'react';
 
-import ReadComponent from '../../components/randing/Read';
+import AccountComponent from '../../components/account';
 
 const Home = () => {
   return (
     <div>
-      <ReadComponent />
+      <AccountComponent />
     </div>
   );
 };

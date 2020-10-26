@@ -1,11 +1,10 @@
 import React from 'react';
+import WatchComponent from '../../components/randing/Watch';
 
-const Watch = () => {
+export default function () {
   return (
     <div>
-      <h1>Watch</h1>
+      <WatchComponent />
     </div>
   );
-};
-
-export default Watch;
+}

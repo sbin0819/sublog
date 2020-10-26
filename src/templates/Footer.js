@@ -13,12 +13,12 @@ const StyledMenu = styled(Menu)`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 20px;
+  padding: 10px 5px;
   background: black;
   a {
     text-decoration: none;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
   }
 `;
 
@@ -26,17 +26,17 @@ const Footer = () => {
   return (
     <Container>
       <StyledMenu>
-        <Menu.Item key='read'>
-          <Link to='/read'>Home</Link>
+        <Menu.Item>
+          <Link to='/news'>News</Link>
         </Menu.Item>
-        <Menu.Item key='watch'>
-          <Link to='/watch'>For you</Link>
+        <Menu.Item>
+          <Link to='/recommend'>For you</Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link to='/topics'>Topics</Link>
         </Menu.Item>
         <Menu.Item key='listen'>
-          <Link to='/listen'>Topics</Link>
-        </Menu.Item>
-        <Menu.Item key='listen'>
-          <Link to='/listen'>Saved</Link>
+          <Link to='/saved'>Saved</Link>
         </Menu.Item>
       </StyledMenu>
     </Container>
