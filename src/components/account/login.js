@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
+import useInputs from '../../hooks/useInputs';
 
 const Container = styled(Form)`
   margin-top: 50px;
@@ -22,6 +23,10 @@ const Container = styled(Form)`
 `;
 
 const Login = () => {
+  const [{ username, email }, onChange, reset] = useInputs({
+    email: '',
+    password: '',
+  });
   const onFinish = (values) => {};
   return (
     <Container>
