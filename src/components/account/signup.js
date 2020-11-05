@@ -1,90 +1,19 @@
 import React, { useState } from 'react';
-import 'antd/dist/antd.css';
-import {
-  Form,
-  Input,
-  Tooltip,
-  Cascader,
-  Select,
-  Row,
-  Col,
-  Checkbox,
-  Button,
-  AutoComplete,
-} from 'antd';
+import { useDispatch } from 'react-redux';
+import { userSignupAction } from '../../modules/user/action';
+import { Form, Input, Tooltip, Select, Checkbox, Button } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
+import { formItemLayout, tailFormItemLayout } from './style';
 const { Option } = Select;
-const AutoCompleteOption = AutoComplete.Option;
-const residences = [
-  {
-    value: 'zhejiang',
-    label: 'Zhejiang',
-    children: [
-      {
-        value: 'hangzhou',
-        label: 'Hangzhou',
-        children: [
-          {
-            value: 'xihu',
-            label: 'West Lake',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    value: 'jiangsu',
-    label: 'Jiangsu',
-    children: [
-      {
-        value: 'nanjing',
-        label: 'Nanjing',
-        children: [
-          {
-            value: 'zhonghuamen',
-            label: 'Zhong Hua Men',
-          },
-        ],
-      },
-    ],
-  },
-];
-const formItemLayout = {
-  labelCol: {
-    xs: {
-      span: 24,
-    },
-    sm: {
-      span: 8,
-    },
-  },
-  wrapperCol: {
-    xs: {
-      span: 24,
-    },
-    sm: {
-      span: 16,
-    },
-  },
-};
-const tailFormItemLayout = {
-  wrapperCol: {
-    xs: {
-      span: 24,
-      offset: 0,
-    },
-    sm: {
-      span: 16,
-      offset: 8,
-    },
-  },
-};
 
 const RegistrationForm = () => {
+  const [isSignupLoading, setIsSignupLoading] = useState(false);
+  const dispatch = useDispatch();
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
+    dispatch(userSignupAction(values));
   };
 
   const prefixSelector = (
@@ -99,26 +28,12 @@ const RegistrationForm = () => {
       </Select>
     </Form.Item>
   );
-  const [autoCompleteResult, setAutoCompleteResult] = useState([]);
 
-  const onWebsiteChange = (value) => {
-    if (!value) {
-      setAutoCompleteResult([]);
-    } else {
-      setAutoCompleteResult(
-        ['.com', '.org', '.net'].map((domain) => `${value}${domain}`),
-      );
-    }
-  };
-
-  const websiteOptions = autoCompleteResult.map((website) => ({
-    label: website,
-    value: website,
-  }));
   return (
     <Form
       {...formItemLayout}
       form={form}
+      style={{ width: '70%', margin: 'auto auto' }}
       name='register'
       onFinish={onFinish}
       initialValues={{
@@ -143,7 +58,6 @@ const RegistrationForm = () => {
       >
         <Input />
       </Form.Item>
-
       <Form.Item
         name='password'
         label='Password'
@@ -157,7 +71,6 @@ const RegistrationForm = () => {
       >
         <Input.Password />
       </Form.Item>
-
       <Form.Item
         name='confirm'
         label='Confirm Password'
@@ -183,7 +96,6 @@ const RegistrationForm = () => {
       >
         <Input.Password />
       </Form.Item>
-
       <Form.Item
         name='nickname'
         label={
@@ -206,20 +118,6 @@ const RegistrationForm = () => {
       </Form.Item>
 
       <Form.Item
-        name='residence'
-        label='Habitual Residence'
-        rules={[
-          {
-            type: 'array',
-            required: true,
-            message: 'Please select your habitual residence!',
-          },
-        ]}
-      >
-        <Cascader options={residences} />
-      </Form.Item>
-
-      <Form.Item
         name='phone'
         label='Phone Number'
         rules={[
@@ -235,50 +133,6 @@ const RegistrationForm = () => {
             width: '100%',
           }}
         />
-      </Form.Item>
-
-      <Form.Item
-        name='website'
-        label='Website'
-        rules={[
-          {
-            required: true,
-            message: 'Please input website!',
-          },
-        ]}
-      >
-        <AutoComplete
-          options={websiteOptions}
-          onChange={onWebsiteChange}
-          placeholder='website'
-        >
-          <Input />
-        </AutoComplete>
-      </Form.Item>
-
-      <Form.Item
-        label='Captcha'
-        extra='We must make sure that your are a human.'
-      >
-        <Row gutter={8}>
-          <Col span={12}>
-            <Form.Item
-              name='captcha'
-              noStyle
-              rules={[
-                {
-                  required: true,
-                  message: 'Please input the captcha you got!',
-                },
-              ]}
-            >
-              <Input />
-            </Form.Item>
-          </Col>
-          <Col span={12}>
-            <Button>Get captcha</Button>
-          </Col>
-        </Row>
       </Form.Item>
 
       <Form.Item

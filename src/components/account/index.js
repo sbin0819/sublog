@@ -7,7 +7,7 @@ const { TabPane } = Tabs;
 const AccountComponent = () => {
   return (
     <div>
-      <Tabs defaultActiveKey='1'>
+      <Tabs defaultActiveKey='2'>
         <TabPane tab='로그인' key='1'>
           <Login />
         </TabPane>
