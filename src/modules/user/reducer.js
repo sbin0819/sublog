@@ -1,6 +1,7 @@
 import { handleActions } from 'redux-actions';
 
 import {
+  USER_SIGNUP,
   USER_SIGNUP_SUCCESS,
   USER_LOGIN_SUCCESS,
   USER_LOGOUT_SUCCESS,

@@ -6,6 +6,9 @@ import { QuestionCircleOutlined } from '@ant-design/icons';
 import { formItemLayout, tailFormItemLayout } from './style';
 const { Option } = Select;
 
+// 주소 관련 api 추가
+// signup 백앤드 구성
+
 const RegistrationForm = () => {
   const [isSignupLoading, setIsSignupLoading] = useState(false);
   const dispatch = useDispatch();
